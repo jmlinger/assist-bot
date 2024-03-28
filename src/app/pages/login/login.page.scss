@@ -1,19 +1,21 @@
 .login-container {
-  background: url('../../../assets/img/background/background-externo.png') no-repeat center center fixed;
-  // background-size: cover;
+  --background: url('../../../assets/img/background/background-externo.png') no-repeat center center fixed;
+  background-size: cover;
   height: 100%;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .login-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  z-index: 100;
   color: #666;
   background-color: #E8E8E810;
   backdrop-filter: blur(40px);
-  width: 80%;
   max-width: 650px;
+  width: 90%;
   max-height: 95%;
   padding: 1rem;
   border-radius: 10px;
@@ -22,4 +24,10 @@
     inset 0 0 6px rgba(255, 255, 255, 0.2),
     inset 0 0 8px rgba(255, 255, 255, 0.1),
     inset 0 0 10px rgba(0, 0, 0, 1);
+
+    ion-card-content {
+      ion-item {
+        --background: rgba(0, 0, 0, 0);
+      }
+    }
 }
