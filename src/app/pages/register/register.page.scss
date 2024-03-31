@@ -41,7 +41,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 20px;
+        gap: 15px;
       }
     }
 }
@@ -49,20 +49,21 @@
 .logo {
   display: flex;
   justify-content: center;
+
+  &::part(image) {
+    margin-bottom: 15px;
+    width: 50%;
+    max-width: 300px;
+  }
 }
 
-.logo::part(image) {
-  margin-bottom: 20px;
-  width: 80%;
-  max-width: 300px;
-}
 
 ion-item {
   position: relative;
 
   > * {
     color: #e8e8e8ce;
-    font-size: 20px;
+    font-size: 12px;
   }
 
   ion-input {
@@ -77,20 +78,30 @@ ion-item {
     color: white;
     padding: 0 12px;
     position: absolute;
-    top: -20px
+    top: -8px;
   }
 }
 
-.forgot-password-container {
+.item-has-value ion-label, .item-has-focus ion-label {
+  transform: translateY(-20%) scale(0.75) !important;
+  color: #e8e8e8ce !important;
+  caret-color: #e8e8e8ce !important;
+}
+
+.item-has-value ion-input, .item-has-focus ion-input {
+  border: solid 2px #3F51B5;
+}
+
+.already-have-an-account-container {
   &::part(native) {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     gap: 2px;
   }
 
-  p {
+  a {
+    text-decoration: none;
     color: #2196f3;
-    text-align: right;
     width: 100%;
     font-weight: 400;
     font-size: 16px;
@@ -110,16 +121,6 @@ ion-item {
   }
 }
 
-.item-has-value ion-label, .item-has-focus ion-label {
-  transform: translateY(10%) scale(0.65) !important;
-  color: #e8e8e8ce !important;
-  caret-color: #e8e8e8ce !important;
-}
-
-.item-has-value ion-input, .item-has-focus ion-input {
-  border: solid 2px #3F51B5;
-}
-
 ion-button {
   &::part(native) {
     color: #e8e8e8ce;
@@ -134,5 +135,14 @@ ion-button {
     align-items: center;
     width: 100%;
     font-size: 18px;
+  }
+}
+
+.proceed-container {
+  p {
+    font-size: 7px;
+    text-align: center;
+    line-height: 1.2em;
+    margin: 2px 0 0 0;
   }
 }

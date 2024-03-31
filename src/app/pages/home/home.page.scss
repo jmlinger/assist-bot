@@ -1,27 +1,195 @@
-#container {
-  text-align: center;
+ion-header {
+  background: linear-gradient(180deg, #2E96EC 0%, #1777D1 100%);
+  position: relative;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::part(image) {
+      width: 30%;
+    }
+  }
+
+  .menu {
+    width: 30px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-45%);
+
+    &::part(image) {
+      width: 100%;
+    }
+  }
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+ion-content {
+  background: #eee;
+  color: #333333;
+  height: 100%;
+  padding: 20px;
+
+  ion-card {
+    display: block;
+    width: 100%;
+    box-shadow: 2px 2px 7px 0px #0000001A;
+    border-radius: 6px;
+    padding: 15px;
+    background: white;
+
+    ion-card-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      ion-img{
+        &::part(image) {
+          width: 12px;
+          margin-right: 5px;
+        }
+      }
+    }
+
+    hr {
+      background-color: #D1D1D1;
+      height: 1px;
+      width: 100%;
+      border-radius: 100%;
+      margin: 5px 0 20px 0;
+    }
+
+    ion-card-content {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      padding: 0;
+
+      .panel {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+
+        ion-select {
+          padding: 0 0.5rem;
+          display: flex;
+          align-items: center;
+          border-radius: 5px;
+          width: fit-content;
+          background: linear-gradient(180deg, #2E96EC 0%, #1777D1 100%);
+
+          &::part(icon) {
+            transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+
+          &.select-expanded::part(icon) {
+            transform: rotate(180deg);
+          }
+
+          &::part(icon) {
+            transform: none;
+          }
+        }
+
+        .panel-buttons {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 5px;
+
+          button {
+            padding: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            font-size: 10px;
+            background: white;
+            color: #1565c0;
+            border: 1px solid #1565c0;
+            border-radius: 5px;
+
+            .panel-icons {
+              &::part(image) {
+                width: 12px;
+                margin-right: 5px;
+              }
+            }
+          }
+
+          :nth-child(4){
+            grid-column: span 3;
+            flex-direction: row !important;
+          }
+        }
+      }
+
+      p-table {
+        box-shadow: 2px 2px 7px 0px #0000001A;
+        border: solid 1px #eee;
+        border-radius: 5px;
+
+        th, td {
+          padding: 0.5rem;
+          background-color: #eee;
+          text-align: center;
+          border: solid 1px white;
+        }
+
+        th:first-child, td:first-child {
+          position: sticky;
+          left: -1px;
+          background-color: #fff;
+          z-index: 1;
+          text-align: start;
+        }
+      }
+    }
+  }
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+#open-modal {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 100;
 
-  color: #8c8c8c;
-
-  margin: 0;
+  &::part(native) {
+    background: linear-gradient(180deg, #2E96EC 0%, #1777D1 100%);
+    width: 100%;
+    padding: 1rem;
+    border-radius: 100%;
+  }
 }
 
-#container a {
-  text-decoration: none;
+ion-modal  {
+  display: grid;
+  height: 100%;
+
+  &::part(backdrop) {
+    z-index: -1;
+  }
+
+  ion-header {
+    :host ion-toolbar {
+      background: linear-gradient(180deg, #2E96EC 0%, #1777D1 100%) !important;
+    }
+  }
+
+  ion-input {
+    position: absolute;
+    bottom: 20px;
+    width: 90%;
+    background: #eee;
+    --padding-start: 12px;
+    --padding-end: 12px;
+    border-radius: 9px;
+    color: #333333;
+    border: solid 2px rgba(0, 0, 0, 0);
+  }
+}
+
+::shadow .toolbar-background {
+
 }

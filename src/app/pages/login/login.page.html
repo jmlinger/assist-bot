@@ -1,29 +1,39 @@
-<!-- <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Global Financeiro</ion-title>
-  </ion-toolbar>
-</ion-header> -->
-
 <ion-content class="login-container" [fullscreen]="true">
   <ion-card class="login-card">
     <ion-card-header>
-      Login
+      <ion-img
+        class="logo"
+        src="../../../assets/img/logo/logo-branco-completo.png"
+        alt="logo"
+      ></ion-img>
     </ion-card-header>
     <ion-card-content>
-      <ion-item>
-        <ion-label position="floating">Email</ion-label>
-        <ion-input type="email"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Senha</ion-label>
-        <ion-input type="password"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-button expand="block" color="primary">Acessar</ion-button>
-      </ion-item>
-      <ion-item>
-        <ion-button expand="block" color="primary">Cadastre-se</ion-button>
-      </ion-item>
+      <form formGroup="login">
+        <ion-item>
+          <ion-label position="floating">Email*</ion-label>
+          <ion-input type="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Senha*</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+        <ion-item class="forgot-password-container">
+          <ion-img slot="start"
+            class="key-icon"
+            src="../../../assets/icon/key.svg"
+            alt="logo"
+          ></ion-img>
+          <p slot="end">
+          Esqueceu sua senha?
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-button expand="block" color="primary" routerLink="/home">Acessar</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-button expand="block" color="primary" routerLink="/register" router-direction="root">Cadastre-se</ion-button>
+        </ion-item>
+      </form>
     </ion-card-content>
   </ion-card>
 </ion-content>
