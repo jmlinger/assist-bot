@@ -1,5 +1,5 @@
 import { FormsModule } from '@angular/forms';
-import { Component, ViewChild } from '@angular/core';
+import { Component, viewChild } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardContent, IonItem, IonLabel, IonInput, IonButton, IonImg, IonIcon, IonText, IonSelect, IonSelectOption, IonModal, IonButtons } from '@ionic/angular/standalone';
 import { TableModule } from 'primeng/table';
 import { OverlayEventDetail } from '@ionic/core/components';
@@ -13,7 +13,7 @@ import { OverlayEventDetail } from '@ionic/core/components';
 
 })
 export class HomePage {
-  @ViewChild(IonModal) modal: IonModal | undefined;
+  // @viewChild(IonModal) modal: IonModal | undefined;
 
   message = 'This modal example uses triggers to automatically open a modal when the button is clicked.';
   question: string = '';
@@ -60,13 +60,13 @@ export class HomePage {
     }
   }
 
-  cancel() {
-    this.modal?.dismiss(null, 'cancel');
-  }
+  // cancel() {
+  //   this.modal?.dismiss(null, 'cancel');
+  // }
 
-  confirm() {
-    this.modal?.dismiss(this.question, 'confirm');
-  }
+  // confirm() {
+  //   this.modal?.dismiss(this.question, 'confirm');
+  // }
 
   onWillDismiss(event: Event) {
     const ev = event as CustomEvent<OverlayEventDetail<string>>;
