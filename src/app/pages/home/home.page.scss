@@ -1,11 +1,10 @@
 ion-header {
-  background: linear-gradient(180deg, #2E96EC 0%, #1777D1 100%);
+  background: linear-gradient(180deg, #2e96ec 0%, #1777d1 100%);
   position: relative;
 
   .logo {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
 
     &::part(image) {
       width: 30%;
@@ -21,39 +20,55 @@ ion-header {
 
     &::part(image) {
       width: 100%;
+      background-color: var(--ion-color-light-shade);
     }
   }
 }
 
-ion-content {
+.content-home {
   background: #eee;
   color: #333333;
+
+  width: 100%;
   height: 100%;
-  padding: 20px;
+
+  overflow-y: auto;
 
   ion-card {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    box-shadow: 2px 2px 7px 0px #0000001A;
+    box-shadow: 2px 2px 7px 0px #0000001a;
     border-radius: 6px;
     padding: 15px;
     background: white;
 
     ion-card-header {
+      width: 100%;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
 
-      ion-img{
+      div {
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        gap: 4px;
+      }
+
+      ion-img {
         &::part(image) {
-          width: 12px;
+          width: 18px;
           margin-right: 5px;
         }
       }
     }
 
     hr {
-      background-color: #D1D1D1;
+      background-color: #d1d1d1;
       height: 1px;
       width: 100%;
       border-radius: 100%;
@@ -61,23 +76,30 @@ ion-content {
     }
 
     ion-card-content {
+      width: 100%;
+      max-width: 400px;
       display: flex;
       flex-direction: column;
       gap: 40px;
-      padding: 0;
 
       .panel {
+        width: 100%;
+        max-width: 400px;
         display: flex;
-        justify-content: space-between;
-        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
 
         ion-select {
-          padding: 0 0.5rem;
+          width: fit-content;
+          padding: 0.8rem;
+          height: fit-content;
           display: flex;
           align-items: center;
+          justify-content: center;
           border-radius: 5px;
-          width: fit-content;
-          background: linear-gradient(180deg, #2E96EC 0%, #1777D1 100%);
+          background: linear-gradient(180deg, #2e96ec 0%, #1777d1 100%);
+          color: var(--ion-color-light);
 
           &::part(icon) {
             transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
@@ -93,12 +115,13 @@ ion-content {
         }
 
         .panel-buttons {
+          width: 100%;
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
           gap: 5px;
 
           button {
-            padding: 0.5rem;
+            padding: 1rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -112,13 +135,13 @@ ion-content {
 
             .panel-icons {
               &::part(image) {
-                width: 12px;
+                width: 15px;
                 margin-right: 5px;
               }
             }
           }
 
-          :nth-child(4){
+          :nth-child(4) {
             grid-column: span 3;
             flex-direction: row !important;
           }
@@ -126,18 +149,21 @@ ion-content {
       }
 
       p-table {
-        box-shadow: 2px 2px 7px 0px #0000001A;
+        width: 100%;
+        box-shadow: 2px 2px 7px 0px #0000001a;
         border: solid 1px #eee;
         border-radius: 5px;
 
-        th, td {
+        th,
+        td {
           padding: 0.5rem;
           background-color: #eee;
           text-align: center;
           border: solid 1px white;
         }
 
-        th:first-child, td:first-child {
+        th:first-child,
+        td:first-child {
           position: sticky;
           left: -1px;
           background-color: #fff;
@@ -151,19 +177,20 @@ ion-content {
 
 #open-modal {
   position: fixed;
-  bottom: 10px;
+  bottom: 20px;
   right: 10px;
   z-index: 100;
 
   &::part(native) {
-    background: linear-gradient(180deg, #2E96EC 0%, #1777D1 100%);
+    background: linear-gradient(180deg, #2e96ec 0%, #1777d1 100%);
     width: 100%;
-    padding: 1rem;
+    padding: 1.2rem;
     border-radius: 100%;
   }
 }
 
-ion-modal  {
+ion-modal {
+  width: 100%;
   display: grid;
   height: 100%;
 
@@ -173,7 +200,7 @@ ion-modal  {
 
   ion-header {
     :host ion-toolbar {
-      background: linear-gradient(180deg, #2E96EC 0%, #1777D1 100%) !important;
+      background: linear-gradient(180deg, #2e96ec 0%, #1777d1 100%) !important;
     }
   }
 
@@ -190,6 +217,6 @@ ion-modal  {
   }
 }
 
-::shadow .toolbar-background {
-
+.question{
+  color: white;
 }

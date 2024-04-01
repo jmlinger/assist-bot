@@ -1,6 +1,5 @@
-
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar class="ion-padding-horizontal">
     <ion-img
       class="menu"
       src="../../../assets/icon/menu-outline.svg"
@@ -14,12 +13,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-card>
+<div class="content-home ion-no-padding ion-no-margin">
+  <ion-card class="ion-no-padding ion-no-margin">
     <ion-card-header>
-      <ion-title>
-        Auditoria Patrimonial
-      </ion-title>
+      <ion-title> Auditoria Patrimonial </ion-title>
       <div>
         <ion-img
           class="logo"
@@ -30,7 +27,7 @@
       </div>
     </ion-card-header>
 
-    <hr>
+    <hr />
 
     <ion-card-content>
       <div class="panel">
@@ -40,21 +37,20 @@
           aria-label="ano"
           placeholder="Selecione o ano"
         >
-        @for (year of years; track $index) {
+          @for (year of years; track $index) {
           <ion-select-option [value]="year">{{year}}</ion-select-option>
-        }
+          }
         </ion-select>
-
         <div class="panel-buttons">
           @for (button of panelButtons; track $index) {
-            <button>
-              <ion-img
-                class="panel-icons"
-                [src]="'../../../assets/icon/' + button.icon"
-                [alt]="button.icon"
-              ></ion-img>
-              {{button.title}}
-            </button>
+          <button>
+            <ion-img
+              class="panel-icons"
+              [src]="'../../../assets/icon/' + button.icon"
+              [alt]="button.icon"
+            ></ion-img>
+            {{button.title}}
+          </button>
           }
         </div>
       </div>
@@ -63,21 +59,26 @@
         <ng-template pTemplate="header">
           <tr>
             @for (col of table.cols; track $index) {
-              <th>{{col.header}}</th>
+            <th>{{col.header}}</th>
             }
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-row>
-            <tr>
-              @for (content of row; track $index) {
-                <td>{{ content }}</td>
-              }
-            </tr>
+          <tr>
+            @for (content of row; track $index) {
+            <td>{{ content }}</td>
+            }
+          </tr>
         </ng-template>
-    </p-table>
+      </p-table>
     </ion-card-content>
   </ion-card>
+</div>
 
+<ion-content
+  class="modal-container ion-no-padding ion-no-margin"
+  [fullscreen]="false"
+>
   <ion-button id="open-modal" expand="block">Assistente Virtual</ion-button>
 
   <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
@@ -85,25 +86,30 @@
       <ion-header>
         <ion-toolbar>
           <ion-buttons slot="start">
-            <!-- <ion-button (click)="cancel()">Cancel</ion-button> -->
+            <ion-button (click)="cancel()">Cancel</ion-button>
           </ion-buttons>
           <ion-title>Assistente Virtual</ion-title>
-          <!-- <ion-buttons slot="end">
-            <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
-          </ion-buttons> -->
+          <ion-buttons slot="end">
+            <ion-button (click)="sendMessage()">Confirm</ion-button>
+          </ion-buttons>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
+        <div>
+          @for (message of chatMessages; track $index) {
+
+          <div class="icon-chat">{{message.name}}</div>
+          <p class="question">{{message.message}}</p>
+          }
+        </div>
+
         <ion-input
           labelPlacement="stacked"
           type="text"
           placeholder="Digite sua pergunta"
-          [(ngModel)]="question"
+          [(ngModel)]="question.message"
         ></ion-input>
       </ion-content>
     </ng-template>
   </ion-modal>
 </ion-content>
-
-
-
