@@ -1,5 +1,6 @@
-<ion-content class="login-container" [fullscreen]="true">
-  <ion-card class="login-card">
+<div class="register-container">
+  <div class="background-register"></div>
+  <ion-card class="register-card">
     <ion-card-header>
       <ion-img
         class="logo"
@@ -8,58 +9,56 @@
       ></ion-img>
     </ion-card-header>
     <ion-card-content>
-      <form action="" formGroup="register">
-        <ion-item>
-          <ion-label position="floating">Nome*</ion-label>
-          <ion-input></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Sobrenome*</ion-label>
-          <ion-input></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Celular*</ion-label>
-          <ion-input type="tel"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">CPF*</ion-label>
-          <ion-input type="number"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Data de Nascimento*</ion-label>
-          <ion-input type="tel"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Email*</ion-label>
-          <ion-input type="email"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Senha*</ion-label>
-          <ion-input type="password"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Confirmar Senha*</ion-label>
-          <ion-input type="password"></ion-input>
-        </ion-item>
-
-        <ion-item class="proceed-container">
+      <form formGroup="register">
+        <ion-input
+          class="ion-no-border"
+          label="Nome *"
+          label-placement="floating"
+          fill="outline"
+          [clearInput]="true"
+          type="text"
+          [clearInput]="true"
+        >
+        </ion-input>
+        <ion-input
+          class="ion-no-border"
+          label="Email *"
+          label-placement="floating"
+          fill="outline"
+          [clearInput]="true"
+          type="email"
+          [clearInput]="true"
+        >
+        </ion-input>
+        <ion-input
+          class="ion-no-border"
+          label="Senha *"
+          label-placement="floating"
+          fill="outline"
+          [clearInput]="true"
+          type="password"
+          [clearInput]="true"
+        >
+        </ion-input>
+        <div class="proceed-container">
           <ion-button routerLink="/home">Prosseguir</ion-button>
           <p>
-            Ao prosseguir você estará concordando com os <a>termos de uso</a> do Global Financeiro
+            Ao prosseguir você estará concordando com os <a>termos de uso</a> do
+            Global Financeiro
           </p>
-        </ion-item>
-
-        <ion-item class="already-have-an-account-container">
-          <ion-img slot="start"
-            class="key-icon"
-            src="../../../assets/icon/key.svg"
-            alt="logo"
-          ></ion-img>
-          <a href="/login">
-            Já tenho uma conta
-          </a>
-        </ion-item>
+        </div>
+        <div class="already-have-an-account-container">
+          <div>
+            <ion-img
+              slot="start"
+              class="key-icon"
+              src="../../../assets/icon/key.svg"
+              alt="logo"
+            ></ion-img>
+            <a href="/login"> Já tenho uma conta </a>
+          </div>
+        </div>
       </form>
     </ion-card-content>
   </ion-card>
-</ion-content>
+</div>

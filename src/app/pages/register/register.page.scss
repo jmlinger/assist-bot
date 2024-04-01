@@ -1,49 +1,54 @@
-.login-container {
-  height: 100%;
-  width: 100%;
+.register-container {
+  position: relative;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../../../assets/img/background/background-externo.jpg') no-repeat center center fixed;
-    background-size: cover;
-    filter: brightness(0.6);
-    z-index: -1;
-  }
+  width: 100%;
+  height: 100vh;
+
+  padding: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.login-card {
+.background-register {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../../../assets/img/background/background-externo.png")
+    no-repeat center center;
+  background-size: cover;
+  filter: brightness(0.6);
+}
+
+.register-card {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
   z-index: 100;
   color: #666;
-  background-color: #E8E8E810;
+  background-color: #e8e8e810;
   backdrop-filter: blur(40px);
   max-width: 650px;
   width: 90%;
   max-height: 95%;
   padding: 1rem;
   border-radius: 10px;
-  box-shadow:
-    inset 0 0 4px rgba(255, 255, 255, 0.3),
+  box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.3),
     inset 0 0 6px rgba(255, 255, 255, 0.2),
-    inset 0 0 8px rgba(255, 255, 255, 0.1),
-    inset 0 0 10px rgba(0, 0, 0, 1);
+    inset 0 0 8px rgba(255, 255, 255, 0.1), inset 0 0 10px rgba(0, 0, 0, 1);
 
-    ion-card-content {
-      form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 15px;
-      }
+  ion-card-content {
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 15px;
     }
+  }
 }
 
 .logo {
@@ -57,46 +62,45 @@
   }
 }
 
+form {
+  width: 100%;
+  height: 100%;
+
+  padding: 1rem;
+}
 
 ion-item {
-  position: relative;
+  --background: transparent;
+  --border-style: none;
 
   > * {
-    color: #e8e8e8ce;
-    font-size: 12px;
-  }
-
-  ion-input {
-    background: #00000040;
-    --padding-start: 12px;
-    --padding-end: 12px;
-    border-radius: 9px;
-    border: solid 2px rgba(0, 0, 0, 0);
-  }
-
-  ion-label {
     color: white;
-    padding: 0 12px;
-    position: absolute;
-    top: -8px;
+    font-size: 20px;
   }
 }
 
-.item-has-value ion-label, .item-has-focus ion-label {
-  transform: translateY(-20%) scale(0.75) !important;
-  color: #e8e8e8ce !important;
-  caret-color: #e8e8e8ce !important;
-}
-
-.item-has-value ion-input, .item-has-focus ion-input {
-  border: solid 2px #3F51B5;
+ion-input {
+  background-color: var(--ion-color-tertiary);
+  color: var(--ion-color-light);
+  border-radius: 9px;
 }
 
 .already-have-an-account-container {
-  &::part(native) {
+
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  div{
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 2px;
+    gap: 0.2rem;
+
+    align-self: center;
+    justify-self: center;
   }
 
   a {
@@ -125,9 +129,9 @@ ion-button {
   &::part(native) {
     color: #e8e8e8ce;
     text-decoration: none;
-    background-color: #229DC3;
+    background-color: #229dc3;
     border: solid 1px white;
-    border-color: #ABABAB;
+    border-color: #ababab;
     border-radius: 10px;
     padding: 0.5rem 0;
     display: flex;
@@ -139,10 +143,17 @@ ion-button {
 }
 
 .proceed-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+
   p {
-    font-size: 7px;
+    font-size: 0.7rem;
     text-align: center;
     line-height: 1.2em;
     margin: 2px 0 0 0;
+
+    color: var(--ion-color-light);
   }
 }

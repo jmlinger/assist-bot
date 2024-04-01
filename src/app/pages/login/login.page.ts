@@ -47,7 +47,6 @@ import { RouterModule } from '@angular/router';
   ],
 })
 export class LoginPage implements OnInit {
-
   constructor() {}
 
   ngOnInit() {
