@@ -15,11 +15,11 @@ import {
   IonRouterLink,
   IonList,
 } from '@ionic/angular/standalone';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit, inject, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
+import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -27,6 +27,7 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./login.page.scss'],
   standalone: true,
   imports: [
+    CommonModule,
     FormsModule,
     IonHeader,
     IonToolbar,
@@ -45,11 +46,15 @@ import { RouterModule } from '@angular/router';
     IonList,
     RouterModule,
   ],
+  providers: [{ provide: UserService, useClass: UserService }],
 })
 export class LoginPage implements OnInit {
-  constructor() {}
+  private service = inject(UserService);
 
+  constructor() {}
   ngOnInit() {
     console.log('xablau');
   }
+
+  criarUsuario() {}
 }

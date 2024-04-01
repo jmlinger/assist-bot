@@ -23,6 +23,9 @@ import {
 } from '@ionic/angular/standalone';
 import { TableModule } from 'primeng/table';
 import { OverlayEventDetail } from '@ionic/core/components';
+import { UserService } from 'src/app/core/services/user.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -30,6 +33,7 @@ import { OverlayEventDetail } from '@ionic/core/components';
   styleUrls: ['home.page.scss'],
   standalone: true,
   imports: [
+    CommonModule,
     IonList,
     FormsModule,
     TableModule,
